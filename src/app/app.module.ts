@@ -14,8 +14,10 @@ import { ArtistaComponent } from './components/artista/artista.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { TarjetaComponent } from './components/shared/tarjeta/tarjeta.component';
 import { LoadingComponent } from './components/shared/loading/loading.component';
+import { ErrorComponent } from './components/shared/error/error.component';
 
 import { ImagePipe } from './pipes/image.pipe';
+import { SecurePipe } from './pipes/secure.pipe';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { ImagePipe } from './pipes/image.pipe';
     NavbarComponent,
     TarjetaComponent,
     LoadingComponent,
+    ErrorComponent,
     ImagePipe,
+    SecurePipe,
   ],
   imports: [
     BrowserModule,

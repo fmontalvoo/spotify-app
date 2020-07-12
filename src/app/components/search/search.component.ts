@@ -12,6 +12,8 @@ export class SearchComponent {
 
   private artists: any[] = Array();
   public loading: boolean;
+  public loadingError: boolean;
+  public errorMessage: string;
 
   constructor(private spotifyService: SpotifyService) { }
 
@@ -21,6 +23,10 @@ export class SearchComponent {
       this.spotifyService.getByArtist(query).subscribe((data: any) => {
         this.artists = data;
         this.loading = false;
+      }, err => {
+        this.loadingError = true;
+        this.loading = false;
+        this.errorMessage = err.error.error.message;
       });
     }
   }
